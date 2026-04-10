@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #01023B;
+  --color-secondary: #f9157f;
+  --color-accent: #ff4d9d;
+  --color-accent2: #2F06CC;
+  --color-accent3: #09F289;
+  
+  --color-bg-base: var(--bg-base);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-hover: var(--bg-card-hover);
+  --color-bg-inset: var(--bg-inset);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-dim: var(--text-dim);
+
+  --color-border-subtle: var(--border-subtle);
+  --color-surface-subtle: var(--surface-subtle);
+
+  --radius-radius: 14px;
+  --radius-radius-sm: 10px;
+  --radius-radius-xs: 6px;
+}
+
+:root {
+  --bg-base: #01023B;
+  --bg-elevated: #0A0D2A;
+  --bg-card: #11142A;
+  --bg-card-hover: #181B38;
+  --bg-inset: #070A1F;
+
+  --text-primary: #E8EDF6;
+  --text-secondary: #A1B5CE;
+  --text-dim: #8FA3C0;
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --surface-subtle: rgba(255, 255, 255, 0.05);
+}
+
+.light {
+  --bg-base: #F8FAFC;
+  --bg-elevated: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F1F5F9;
+  --bg-inset: #F1F5F9;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-dim: #64748B;
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --surface-subtle: rgba(0, 0, 0, 0.04);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-base text-text-primary font-sans transition-colors duration-300;
+    background-image: radial-gradient(ellipse 70% 45% at 15% -5%, rgba(1, 2, 59, 0.05) 0%, transparent 55%);
+  }
+  
+  .light body {
+    background-image: radial-gradient(ellipse 70% 45% at 15% -5%, rgba(15, 23, 42, 0.05) 0%, transparent 55%);
+  }
+}
+
+.pi svg {
+  @apply stroke-2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(161, 181, 206, 0.04) 0%, rgba(161, 181, 206, 0.11) 40%, rgba(161, 181, 206, 0.04) 80%);
+  background-size: 300% 100%;
+  animation: skeleton-wave 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-wave {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
